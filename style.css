@@ -41,6 +41,14 @@ body {
   padding-left: 1.1em;
  }
 
+ .list-name {
+   cursor: pointer;
+ }
+
+ .list-name:hover {
+   opacity: 0.7;
+ }
+
  form {
    display: flex;
  }
@@ -93,5 +101,79 @@ body {
  }
  
  .todo-list {
+   --spacer: 2rem;
+
    grid-area: active;
+   background: ivory;
+   color: grey;
+ }
+
+ .todo-header {
+   padding: var(--spacer);
+   background: gainsboro;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .list-title {
+   margin: 0 1em 0 0;
+ }
+
+ .task-count {
+   margin: 0;
+   font-size: 1rem;
+ }
+
+ .todo-body {
+   padding: var(--spacer);
+ }
+
+ [type="checkbox"] {
+   opacity: 0;
+   position: absolute;
+ }
+
+ .task.label {
+   display: flex;
+   align-items: center;
+   position: relative;
+   margin-bottom: 1.5em;
+ }
+
+ .task label::after {
+   content: "";
+   position: absolute;
+   right: 0;
+   left: 0;
+   height: 1px;
+   bottom: -50%;
+   background: currentColor;
+   opacity: .1;
+ }
+
+ .custom-checkbox {
+   --size: .75em;
+
+   display: inline-block;
+   width: var(--size);
+   height: var(--size);
+   margin-right: var(--size);
+   cursor: pointer;
+   border: 2px solid currentColor;
+   border-radius: 50%;
+   transform: scale(1);
+   transition: transform 300ms ease-in-out;
+ }
+
+ .task:hover .custom-checkbox, 
+ [type="checkbox"]:focus + label .custom-checkbox {
+  transform: scale(1.2);
+  color: rgb(59, 59, 250);
+ }
+
+ [type="checkbox"]:checked + label .custom-checkbox {
+   background: rgb(59, 59, 250);
+   border-color:rgb(59, 59, 250);
+   box-shadow: inset 0 0 0px 3px whitesmoke; 
  }
