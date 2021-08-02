@@ -18,6 +18,7 @@ body {
   font-weight: 300;
   font-size: 1.5rem;
   background-color: var(--blue);
+  /* border: 1px solid var(--black); */
   color: var(--white);
   display: grid;
   grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
