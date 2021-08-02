@@ -20,8 +20,67 @@ body {
     1fr minmax(100px, 300px) minmax(250px, 500px) 1fr; 
  }
 
- .title {}
+ .title {
+   grid-area: header;
+   text-align: center;
+   font-size: calc(7vw + 2rem);
+   font-weight: 800;
+   color: rgba(0,0,0,0.3);
+   letter-spacing: 1px;
+   margin: -0.3em 0 0 0.5em;
+ }
 
- .all-tasks {}
+ .all-tasks {
+   grid-area: lists;
+ }
+
+ .task-list {
+  font-size: 1.2rem; 
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+ }
+
+ form {
+   display: flex;
+ }
+
+ .btn {
+   cursor: pointer;
+   background: 0;
+   border: 0;
+   padding: 0;
+   color: inherit;
+ }
+
+ .new {
+   background: transparent;
+   border: 0;
+   color: inherit;
+   border-bottom: 1px solid currentColor;
+   font-size: inherit;
+   outline: none; 
+
+   transition: border-bottom 150ms ease-in;
+   order: 2;
+ }
+
+ .new:focus {
+   border-bottom-width: 3px;
+ }
+
+ .new:focus::placeholder {
+   opacity: 0.2;
+ }
+
+ .new.list {
+   font-size: 1.1rem;
+ }
+
+ .active-list {
+   font-weight: 700;
+ }
  
- .todo-list {}
+ .todo-list {
+   grid-area: active;
+ }
