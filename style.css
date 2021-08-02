@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color:royalblue;
+  color: aliceblue;
+
+  display: grid;
+  grid: 
+    "header header header header" auto
+    "..... lists active ......" auto / 
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr; 
+ }
+
+ .title {}
+
+ .all-tasks {}
+ 
+ .todo-list {}
