@@ -10,6 +10,7 @@ const taskTemplate = document.getElementById('task-template');
 const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompleteTaskButton = document.querySelector('[data-clear-complete-task-button]');
+const toggleButton = document.querySelector('[data-toggle-button]');
 
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
@@ -136,7 +137,18 @@ function save() {
 function clearElement(element) {
   while(element.firstChild) {
     element.removeChild(element.firstChild);
-  }
+  };
 }
+
+toggleButton.addEventListener('click', e => {
+  const title = document.querySelector('[data-title]');
+  title.classList.toggle('title-neon');
+  if (toggleButton.innerText === 'Turn On') {
+    toggleButton.innerText = 'Turn Off';
+  } else if (toggleButton.innerText === 'Turn Off') {
+    toggleButton.innerText = 'Turn On';
+  };
+});
+
 
 render();
