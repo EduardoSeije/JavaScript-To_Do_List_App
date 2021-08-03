@@ -1,7 +1,7 @@
 :root {
-  --blue: rgb(54, 112, 199);
+  --blue: rgb(16, 34, 61);
   --white: #f4f4f4;
-  --black: #333;
+  --black: rgb(94, 94, 94);
   --red: rgb(99, 36, 36);
 }
 
@@ -28,7 +28,7 @@ body {
   grid-area: header;
   text-align: center;
   font-size: calc(7vw + 2rem);
-  font-weight: 900;
+  font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
   letter-spacing: 2px;
   margin: 0.3em 0 0.5em;
@@ -274,3 +274,65 @@ form {
   bottom: -35px;
   color: var(--white);
 }
+
+.title-neon {
+  grid-area: header;
+  position: relative;
+  font-size: calc(7vw + 2rem);
+  width: 100%;
+  color: #0e3742;
+  letter-spacing: 2px;
+  margin: 0.3em 0 0.5em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 80%, 90.1%, 92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 90.1%, 90%, 90.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 120px #00b3ff;
+  }
+}
+
+.button-container .toggle-button {
+  background-color: #0f3b47;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid  rgba(255,255,255,0.1);
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;;
+  overflow: hidden;
+  transition: 0.5s;
+  height: 50px;
+  background: linear-gradient(to left, rgba(255,255,255,0.15), transparent);
+  width: 130px;
+}
+
+.button-container .toggle-button:hover {
+  letter-spacing: 2px;
+}
+
+.button-container .toggle-button::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transform: skewX(45deg) translateX(0);
+}
+
+.button-container .toggle-button:hover::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
